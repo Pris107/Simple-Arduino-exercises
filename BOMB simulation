@@ -1,0 +1,34 @@
+
+void setup() {
+  // put your setup code here, to run once:
+ Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int TIME = 3; //initial time
+  int password; //password is a combination of numbers
+ while (TIME >= 0){  //count down
+  Serial.print("TIME = "); Serial.print(TIME); Serial.print("s"); Serial. print('\n');
+  delay(1000); //to wait 1 second
+  TIME --;
+ }
+  Serial.println("BOMB RELEASED!!!!!! ");
+
+  Serial.println("Deactivate Password: ");
+
+  while (Serial.available() == 0) {
+  }
+
+ password = Serial.parseInt(); //for user's input
+ 
+ if (password == 24315) //if password is correct
+ Serial.println("BOMB DEACTIVATED. Congrats!!!");
+
+ else //if password is wrong
+ { Serial.println("HHAHHAHHAHAHHAHAHAA HUMANITY LOST"); delay(500); Serial.println("8476345678 casualties");
+ }
+ delay(15000); //delay for next round
+}
+
+
